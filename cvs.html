@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<style>
+			.search-section,
+			.popup-section {
+				max-width: 500px;
+				margin: 50px auto;
+				padding: 30px;
+				border-radius: 15px;
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+				background: white;
+				text-align: center;
+				font-family: sans-serif;
+			}
+
+			#searchfield {
+				width: 70%;
+				padding: 12px;
+				font-size: 16px;
+				border: 2px solid #ddd;
+				border-radius: 8px;
+				outline: none;
+				margin-right: 10px;
+			}
+
+			#searchbutton,
+			#searchagain {
+				padding: 12px 20px;
+				font-size: 16px;
+				background: #0073e6;
+				color: white;
+				border: none;
+				border-radius: 8px;
+				cursor: pointer;
+				transition: background 0.3s ease;
+			}
+
+			#searchbutton:hover,
+			#searchagain:hover {
+				background: #005bb5;
+			}
+
+			.popup-section {
+				display: none;
+				animation: fadeIn 0.5s ease-in-out;
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: scale(0.9);
+				}
+				to {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+
+			.popup-section .success-message {
+				font-size: 20px;
+				margin-bottom: 20px;
+				color: green;
+			}
+			/* Design the success infos */
+			.popup-section .success p {
+				font-size: 16px;
+				margin: 5px 0;
+				text-align: left;
+			}
+			.popup-section .error p {
+				font-size: 16px;
+				margin: 5px 0;
+				text-align: center;
+			}
+			.popup-section .success span {
+				font-weight: bold;
+			}
+			.popup-section .error {
+				font-size: 20px;
+				color: red;
+				margin-top: 20px;
+			}
+		</style>
+
+		<!-- Design a Certificate Search
+     Add in input & a button to search with  a certificate ID. Modern design.
+     On click of the button, hide the input & show a popup with a success message OR ERROR MESSAGE.
+    -->
+		<div class="search-section" id="searchContainer">
+			<h2>Verify Your Certificate</h2>
+			<input type="text" id="searchfield" placeholder="Enter Certificate ID" />
+			<button id="searchbutton">Search</button>
+		</div>
+		<div class="popup-section" id="popupContainer">
+			<div class="success">
+				<div class="success-message" id="successMessage">Certificate ID is valid!</div>
+				<p>Certificate ID: <span id="certificateID">#1454asdsd1f4df454</span></p>
+				<p>Student Name: <span id="certificateName">Shakib Shown</span></p>
+				<p>Issue Date: <span id="certificateDate">04 April 2024</span></p>
+			</div>
+			<div class="error">
+				<div class="error" id="errorMessage">Certificate ID is invalid!</div>
+                <p>No Information Found with this Certificate ID</p>
+			</div>
+ 
+		</div>
+
+		<script>
+			document.getElementById("searchbutton").addEventListener("click", function () {
+				var input = document.getElementById("searchfield").value.trim();
+				if (input !== "") {
+					document.getElementById("popupContainer").style.display = "block";
+				} else {
+					alert("Please enter an ID.");
+				}
+			}); 
+		</script>
+	</body>
+</html>

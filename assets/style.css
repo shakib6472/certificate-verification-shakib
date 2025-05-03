@@ -1,0 +1,167 @@
+.cvs .search-section,
+.cvs .popup-section {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: white;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.cvs .search-section h2 {
+    font-size: 24px;
+    margin-bottom: 0px;
+    color: #333;
+}
+.cvs .search-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #252525;
+}
+.cvs .search-section .search {
+    display: flex;
+    gap: 10px;
+}
+.cvs .search-section #insertedcertID {
+    width: 70%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.cvs .search-section #certsearchbutton {
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cvs .search-section #certsearchbutton:hover {
+    background: #005bb5;
+}
+
+.cvs .popup-section {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.cvs .popup-section .success, 
+.cvs .popup-section .error {
+    display: none; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.cvs .popup-section .success-message {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: green;
+}
+.cvs .popup-section .view-certificate {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0073e6;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+.cvs .popup-section .view-certificate:hover {
+    background: #005bb5;
+}
+
+/* Design the success infos */
+.cvs .popup-section .success p {
+    font-size: 16px;
+    margin: 5px 0;
+    text-align: left;
+}
+
+.cvs .popup-section .error p {
+    font-size: 16px;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.cvs .popup-section .success span {
+    font-weight: bold;
+}
+
+.cvs .popup-section .error {
+    font-size: 20px;
+    color: red;
+    margin-top: 20px;
+}
+
+
+/* Loader */
+.pre-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.pre-loader .lds-hourglass,
+.pre-loader .lds-hourglass:after {
+  box-sizing: border-box;
+}
+.pre-loader .lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  color: #3BBC9B;
+
+}
+.pre-loader .lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid currentColor;
+  border-color: currentColor transparent currentColor transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
