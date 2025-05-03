@@ -11,6 +11,8 @@
 - Displays certificate details (ID, student name, issue date) on successful verification.
 - Provides an error message for invalid certificate IDs.
 - Includes a shortcode for embedding the verification form.
+- Admin page to view all certificates issued.
+- Loader animation during certificate verification.
 
 ---
 
@@ -27,6 +29,12 @@
 
 ---
 
+## Admin Page
+- Navigate to **All Certificates** in the WordPress admin menu to view a list of all issued certificates.
+- The table displays the user name, certificate ID, and course name.
+
+---
+
 ## Shortcode
 - **Shortcode:** `[cvs]`
 - **Description:** Embeds the certificate verification form on any page or post.
@@ -35,6 +43,12 @@
 
 ## AJAX Integration
 The plugin uses AJAX to handle certificate verification requests without reloading the page. Ensure that the WordPress AJAX URL is accessible for proper functionality.
+
+---
+
+## Loader Animation
+- A loader animation is displayed while the certificate verification request is being processed.
+- The loader ensures a better user experience by indicating that the system is working.
 
 ---
 
