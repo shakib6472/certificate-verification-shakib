@@ -3,7 +3,7 @@
  * Plugin Name:      Certficate Verification 
 * Plugin URI:        https://github.com/shakib6472/
 * Description:       Verify Tutor LMS Certificate
-* Version:           1.0.0
+* Version:           1.1.0
 * Requires at least: 5.2
 * Requires PHP:      7.2
 * Author:            Shakib Shown
