@@ -25,6 +25,7 @@ if (!class_exists('Cvs')) {
             add_action('init', array($this, 'cvs_init'));
             add_action('wp_enqueue_scripts', array($this, 'cvs_enqueue_scripts'));
             add_shortcode('cvs', array($this, 'cvs_shortcode'));
+            add_action('admin_menu', array($this, 'cvs_admin_menu'));
         }
 
         public function cvs_init()
@@ -48,10 +49,24 @@ if (!class_exists('Cvs')) {
             include(plugin_dir_path(__FILE__) . 'cvs-form.php');
             return ob_get_clean();
         }
+
+        public function cvs_admin_menu()
+        {
+            add_menu_page(
+                'All Certificates', // Page title
+                'All Certificates', // Menu title
+                'manage_options',   // Capability
+                'cvs-all-certificates', // Menu slug
+                'cvs_all_certificates_page', // Callback function
+                'dashicons-awards', // Icon
+                6                   // Position
+            );
+        }
     }
 }
 new Cvs();
 
+require_once plugin_dir_path(__FILE__) . 'admin/all-certificates.php';
 
 function verify_certificate (){
     global $wpdb;
